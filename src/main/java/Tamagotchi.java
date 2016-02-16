@@ -96,7 +96,7 @@ public class Tamagotchi {
     }
   }
   public Boolean isMature() {
-    if (mAge >= 50) {
+    if (mAge >= 100) {
       return true;
     } return false;
   }

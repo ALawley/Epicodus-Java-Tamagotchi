@@ -1,0 +1,21 @@
+<h1>Tamagotchi Care</h1>
+<p>Your tamagotchi has three main statistics: Hunger, Boredom, and Tiredness. These will start high, but drop with each action you take. Feed, play with, and let your Tamagotchi rest to keep these high. If they drop to 0, your Tamagotchi's health and happiness will drop. If health or happiness reach 0, your Tamagotchi will run away or die. With every action, your Tamagotchi will get a little older, and after 100 actions, your Tamagotchi will mature.</p>
+<h3>$name</h3>
+<p>Hunger - $food</p>
+<p>Boredom - $play</p>
+<p>Tiredness - $rest</p>
+<p>Health - $health</p>
+<p>Happiness - $happiness</p>
+<p>Age - $age</p>
+<form method="post" action="/feed">
+  <input type="hidden" name="name" value="value" />
+  <button type="submit" class="btn btn-danger">Feed $name</button>
+</form>
+<form method="post" action="/play">
+  <input type="hidden" name="name" value="value" />
+  <button type="submit" class="btn btn-danger">Play with $name</button>
+</form>
+<form method="post" action="/rest">
+  <input type="hidden" name="name" value="value" />
+  <button type="submit" class="btn btn-danger">Let $name rest</button>
+</form>
