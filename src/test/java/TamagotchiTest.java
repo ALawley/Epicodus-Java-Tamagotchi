@@ -26,17 +26,46 @@ public class TamagotchiTest {
     assertTrue(testTamagotchi.getRestLevel() < 10);
   }
   @Test
+  public void timePasses_healthGoesDownWhenFoodIsZero_9() {
+    Tamagotchi testTamagotchi = new Tamagotchi("Tester");
+    testTamagotchi.setFood(0);
+    testTamagotchi.timePasses();
+    assertEquals(9, testTamagotchi.getHealthLevel());
+  }
+  @Test
+  public void timePasses_happinessGoesDownWhenPlayIsZero_9() {
+    Tamagotchi testTamagotchi = new Tamagotchi("Tester");
+    testTamagotchi.setPlay(0);
+    testTamagotchi.timePasses();
+    assertEquals(9, testTamagotchi.getHappinessLevel());
+  }
+  @Test
+  public void timePasses_healthAndHappinessGoesDownWhenRestIsZero_9() {
+    Tamagotchi testTamagotchi = new Tamagotchi("Tester");
+    testTamagotchi.setRest(0);
+    testTamagotchi.timePasses();
+    assertEquals(9, testTamagotchi.getHealthLevel());
+    assertEquals(9, testTamagotchi.getHappinessLevel());
+  }
+  @Test
   public void setFood_foodLevelSetToInput_5() {
     Tamagotchi testTamagotchi = new Tamagotchi("Tester");
     testTamagotchi.setFood(5);
     assertEquals(5, testTamagotchi.getFoodLevel());
   }
   @Test
-  public void feedPet_foodLevelWillIncreasebyFive() {
+  public void feedPet_foodLevelWillIncreasebyFive_7() {
     Tamagotchi testTamagotchi = new Tamagotchi("Tester");
     testTamagotchi.setFood(2);
     testTamagotchi.feedPet();
     assertEquals(7, testTamagotchi.getFoodLevel());
+  }
+  @Test
+  public void feedPet_foodLevelWillNotIncreasePastTen_10() {
+    Tamagotchi testTamagotchi = new Tamagotchi("Tester");
+    testTamagotchi.setFood(8);
+    testTamagotchi.feedPet();
+    assertEquals(10, testTamagotchi.getFoodLevel());
   }
   @Test
   public void setPlay_playLevelSetToInput_8() {
@@ -45,11 +74,18 @@ public class TamagotchiTest {
     assertEquals(8, testTamagotchi.getPlayLevel());
   }
   @Test
-  public void playPet_playLevelWillIncreasebyFive() {
+  public void playPet_playLevelWillIncreasebyFive_8() {
     Tamagotchi testTamagotchi = new Tamagotchi("Tester");
     testTamagotchi.setPlay(3);
     testTamagotchi.playPet();
     assertEquals(8, testTamagotchi.getPlayLevel());
+  }
+  @Test
+  public void playPet_playLevelWillNotIncreasePastTen_10() {
+    Tamagotchi testTamagotchi = new Tamagotchi("Tester");
+    testTamagotchi.setPlay(8);
+    testTamagotchi.playPet();
+    assertEquals(10, testTamagotchi.getPlayLevel());
   }
   @Test
   public void setRest_restLevelSetToInput_6() {
@@ -58,11 +94,18 @@ public class TamagotchiTest {
     assertEquals(6, testTamagotchi.getRestLevel());
   }
   @Test
-  public void restPet_restLevelWillIncreasebyFive() {
+  public void restPet_restLevelWillIncreasebyFive_8() {
     Tamagotchi testTamagotchi = new Tamagotchi("Tester");
     testTamagotchi.setRest(3);
     testTamagotchi.restPet();
     assertEquals(8, testTamagotchi.getRestLevel());
+  }
+  @Test
+  public void restPet_restLevelWillNotIncreasePastTen_10() {
+    Tamagotchi testTamagotchi = new Tamagotchi("Tester");
+    testTamagotchi.setRest(7);
+    testTamagotchi.restPet();
+    assertEquals(10, testTamagotchi.getRestLevel());
   }
   @Test
   public void setAge_ageSetToInput_4() {
