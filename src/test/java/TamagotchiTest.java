@@ -116,7 +116,7 @@ public class TamagotchiTest {
   @Test
   public void isMature_playerWinsWhenAgeIs50_true() {
     Tamagotchi testTamagotchi = new Tamagotchi("Tester");
-    testTamagotchi.setAge(50);
+    testTamagotchi.setAge(52);
     assertEquals(true, testTamagotchi.isMature());
   }
   @Test

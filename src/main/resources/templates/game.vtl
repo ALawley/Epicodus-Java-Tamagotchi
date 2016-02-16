@@ -20,15 +20,15 @@
 <p>Happiness - $happiness</p>
 <p>Age - $age</p>
 <form method="post" action="/feed">
-  <input type="hidden" name="name" value="value" />
+  <input type="hidden" name="name" id="feed" value="value" />
   <button type="submit" class="btn btn-danger">Feed $name</button>
 </form>
 <form method="post" action="/play">
-  <input type="hidden" name="name" value="value" />
+  <input type="hidden" name="name" id="play" value="value" />
   <button type="submit" class="btn btn-danger">Play with $name</button>
 </form>
 <form method="post" action="/rest">
-  <input type="hidden" name="name" value="value" />
+  <input type="hidden" name="name" id="rest" value="value" />
   <button type="submit" class="btn btn-danger">Let $name rest</button>
 </form>
 #end

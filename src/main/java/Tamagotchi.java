@@ -59,9 +59,9 @@ public class Tamagotchi {
     mHappiness = newHappiness;
   }
   public void timePasses() {
-    mFood -= (myRandomGenerator.nextInt(2) + 1);
-    mPlay -= (myRandomGenerator.nextInt(2) + 1);
-    mRest -= (myRandomGenerator.nextInt(2) + 1);
+    mFood -= myRandomGenerator.nextInt(5);
+    mPlay -= myRandomGenerator.nextInt(5);
+    mRest -= myRandomGenerator.nextInt(5);
     mAge +=1;
     if (mFood <= 0) {
       mFood = 0;
@@ -96,7 +96,7 @@ public class Tamagotchi {
     }
   }
   public Boolean isMature() {
-    if (mAge >= 100) {
+    if (mAge >= 52) {
       return true;
     } return false;
   }
