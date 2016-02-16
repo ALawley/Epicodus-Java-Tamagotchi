@@ -39,6 +39,9 @@ public class App {
       tempTamagotchi.timePasses();
       request.session().attribute("tamagotchi", tempTamagotchi);
 
+      model.put("win", tempTamagotchi.isMature());
+      model.put("die", tempTamagotchi.isDead());
+      model.put("runAway", tempTamagotchi.isRunAway());
       model.put("name", tempTamagotchi.getName());
       model.put("food", tempTamagotchi.getFoodLevel());
       model.put("play", tempTamagotchi.getPlayLevel());
@@ -46,7 +49,7 @@ public class App {
       model.put("health", tempTamagotchi.getHealthLevel());
       model.put("happiness", tempTamagotchi.getHappinessLevel());
       model.put("age", tempTamagotchi.getAge());
-      model.put("template", "templates/feed.vtl");
+      model.put("template", "templates/game.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -57,6 +60,9 @@ public class App {
       tempTamagotchi.timePasses();
       request.session().attribute("tamagotchi", tempTamagotchi);
 
+      model.put("win", tempTamagotchi.isMature());
+      model.put("die", tempTamagotchi.isDead());
+      model.put("runAway", tempTamagotchi.isRunAway());
       model.put("name", tempTamagotchi.getName());
       model.put("food", tempTamagotchi.getFoodLevel());
       model.put("play", tempTamagotchi.getPlayLevel());
@@ -64,7 +70,7 @@ public class App {
       model.put("health", tempTamagotchi.getHealthLevel());
       model.put("happiness", tempTamagotchi.getHappinessLevel());
       model.put("age", tempTamagotchi.getAge());
-      model.put("template", "templates/play.vtl");
+      model.put("template", "templates/game.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -75,6 +81,9 @@ public class App {
       tempTamagotchi.timePasses();
       request.session().attribute("tamagotchi", tempTamagotchi);
 
+      model.put("win", tempTamagotchi.isMature());
+      model.put("die", tempTamagotchi.isDead());
+      model.put("runAway", tempTamagotchi.isRunAway());
       model.put("name", tempTamagotchi.getName());
       model.put("food", tempTamagotchi.getFoodLevel());
       model.put("play", tempTamagotchi.getPlayLevel());
@@ -82,7 +91,7 @@ public class App {
       model.put("health", tempTamagotchi.getHealthLevel());
       model.put("happiness", tempTamagotchi.getHappinessLevel());
       model.put("age", tempTamagotchi.getAge());
-      model.put("template", "templates/rest.vtl");
+      model.put("template", "templates/game.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }

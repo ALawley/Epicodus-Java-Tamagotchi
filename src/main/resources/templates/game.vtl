@@ -1,4 +1,17 @@
 <h1>Tamagotchi Care</h1>
+#if ($win)
+<h3>You win. Your Tamagotchi, $name is happy, healthy and grown up.</h3>
+<a href="/"><button type="button" class="btn btn-danger">Play again!</button>
+
+#elseif ($die)
+<h3>Your Tamagotchi, $name is dead. Sorry. Buy a new one and take better care of it.</h3>
+<a href="/"><button type="button" class="btn btn-danger">Play again!</button>
+
+#elseif ($runAway)
+<h3>Your Tamagotchi has ran away.</h3>
+<a href="/"><button type="button" class="btn btn-danger">Play again!</button>
+
+#else
 <h3>$name</h3>
 <p>Hunger - $food</p>
 <p>Boredom - $play</p>
@@ -18,3 +31,4 @@
   <input type="hidden" name="name" value="value" />
   <button type="submit" class="btn btn-danger">Let $name rest</button>
 </form>
+#end
