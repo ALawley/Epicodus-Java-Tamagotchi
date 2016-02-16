@@ -1,12 +1,12 @@
-# Title NAME
+# Tamagotchi Game
 
-#### Creates an apploication: February 12, 2016.
+#### OOP exercise for Epicodus Java class: February 16, 2016.
 
-#### By Polina Nenchev
+#### By Anna Lawley and Polina Nenchev
 
 ## Description
 
-This was created as an Epicodus exercise in Behavior Driven Development, web app development with Spark and Velocity, and solo programming.
+This program will let the user create their very own tamagotchi, take care of it, and hopefully keep it happy and healthy. Name your tamagotchi, then click the "feed", "play", and "sleep" buttons to take care of it.
 
 ## Setup/Installation Requirements
 
@@ -20,10 +20,10 @@ This was created as an Epicodus exercise in Behavior Driven Development, web app
 
 ## Technologies Used
 
-Java, Spark, Junit, Velocity, Bootstrap
+Java, Spark, Junit, Velocity, Bootstrap, FluentLenium
 
 ### License
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2016 Polina Nenchev
+Copyright (c) 2016 Anna Lawley, Polina Nenchev
