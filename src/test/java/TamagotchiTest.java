@@ -64,4 +64,40 @@ public class TamagotchiTest {
     testTamagotchi.restPet();
     assertEquals(8, testTamagotchi.getRestLevel());
   }
+  @Test
+  public void setAge_ageSetToInput_4() {
+    Tamagotchi testTamagotchi = new Tamagotchi("Tester");
+    testTamagotchi.setAge(4);
+    assertEquals(4, testTamagotchi.getAge());
+  }
+  @Test
+  public void isMature_playerWinsWhenAgeIs50_true() {
+    Tamagotchi testTamagotchi = new Tamagotchi("Tester");
+    testTamagotchi.setAge(50);
+    assertEquals(true, testTamagotchi.isMature());
+  }
+  @Test
+  public void setHealth_healthSetToInput_4() {
+    Tamagotchi testTamagotchi = new Tamagotchi("Tester");
+    testTamagotchi.setHealth(4);
+    assertEquals(4, testTamagotchi.getHealthLevel());
+  }
+  @Test
+  public void isDead_diesWhenHealthIsZero_true() {
+    Tamagotchi testTamagotchi = new Tamagotchi("Tester");
+    testTamagotchi.setHealth(0);
+    assertEquals(true, testTamagotchi.isDead());
+  }
+  @Test
+  public void setHappiness_happinessSetToInput_4() {
+    Tamagotchi testTamagotchi = new Tamagotchi("Tester");
+    testTamagotchi.setHappiness(4);
+    assertEquals(4, testTamagotchi.getHappinessLevel());
+  }
+  @Test
+  public void isRunAway_diesWhenHealthIsZero_true() {
+    Tamagotchi testTamagotchi = new Tamagotchi("Tester");
+    testTamagotchi.setHappiness(0);
+    assertEquals(true, testTamagotchi.isRunAway());
+  }
 }

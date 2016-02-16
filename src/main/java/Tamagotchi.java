@@ -40,39 +40,74 @@ public class Tamagotchi {
   public int getAge() {
     return mAge;
   }
-  public Boolean setFood(int newFood) {
+  public void setFood(int newFood) {
     mFood = newFood;
-    return true;
   }
-  public Boolean timePasses() {
+  public void setPlay(int newPlay) {
+    mPlay = newPlay;
+  }
+  public void setRest(int newRest) {
+    mRest = newRest;
+  }
+  public void setAge(int newAge) {
+    mAge = newAge;
+  }
+  public void setHealth(int newHealth) {
+    mHealth = newHealth;
+  }
+  public void setHappiness(int newHappiness) {
+    mHappiness = newHappiness;
+  }
+  public void timePasses() {
     mFood -= (myRandomGenerator.nextInt(2) + 1);
     mPlay -= (myRandomGenerator.nextInt(2) + 1);
     mRest -= (myRandomGenerator.nextInt(2) + 1);
-    return true;
+    mAge +=1;
+    if (mFood <= 0) {
+      mFood = 0;
+      mHealth -=1;
+    }
+    if (mPlay <= 0) {
+      mPlay = 0;
+      mHappiness -=1;
+    }
+    if (mRest <= 0) {
+      mRest = 0;
+      mHealth -=1;
+      mHappiness -=1;
+    }
   }
-  public Boolean feedPet() {
+  public void feedPet() {
     mFood += 5;
-    return true;
+    if (mFood > 10) {
+      mFood = 10;
+    }
   }
-
-  public Boolean playPet() {
+  public void playPet() {
     mPlay +=5;
-    return true;
+    if (mPlay > 10) {
+      mPlay = 10;
+    }
   }
-
-  public Boolean setPlay(int newPlay) {
-    mPlay = newPlay;
-    return true;
-
-  }
-
-  public Boolean setRest(int newRest) {
-    mRest = newRest;
-    return true;
-  }
-  public Boolean restPet() {
+  public void restPet() {
     mRest +=5;
-    return true;
+    if (mRest > 10) {
+      mRest = 10;
+    }
   }
-
+  public Boolean isMature() {
+    if (mAge >= 50) {
+      return true;
+    } return false;
+  }
+  public Boolean isDead() {
+    if (mHealth <= 0) {
+      return true;
+    } return false;
+  }
+  public Boolean isRunAway() {
+    if (mHappiness <= 0) {
+      return true;
+    } return false;
+  }
 }
