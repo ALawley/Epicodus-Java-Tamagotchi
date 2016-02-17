@@ -1,34 +1,34 @@
 <h1>Tamagotchi Care</h1>
-#if ($win)
+#if ($tamagotchi.isMature())
 <h3>You win. Your Tamagotchi, $name is happy, healthy and grown up.</h3>
 <a href="/"><button type="button" class="btn btn-danger">Play again!</button>
 
-#elseif ($die)
+#elseif ($tamagotchi.isDead())
 <h3>Your Tamagotchi, $name is dead. Sorry. Buy a new one and take better care of it.</h3>
 <a href="/"><button type="button" class="btn btn-danger">Play again!</button>
 
-#elseif ($runAway)
+#elseif ($tamagotchi.isRunAway)
 <h3>Your Tamagotchi has ran away.</h3>
 <a href="/"><button type="button" class="btn btn-danger">Play again!</button>
 
 #else
-<h3>$name</h3>
-<p>Hunger - $food</p>
-<p>Boredom - $play</p>
-<p>Tiredness - $rest</p>
-<p>Health - $health</p>
-<p>Happiness - $happiness</p>
-<p>Age - $age</p>
+<h3>$tamagotchi.getName()</h3>
+<p>Hunger - $tamagotchi.getFoodLevel()</p>
+<p>Boredom - $tamagotchi.getPlayLevel()</p>
+<p>Tiredness - $tamagotchi.getRestLevel()</p>
+<p>Health - $tamagotchi.getHealthLevel()</p>
+<p>Happiness - $tamagotchi.getHappinessLevel()</p>
+<p>Age - $tamagotchi.getAge()</p>
 <form method="post" action="/feed">
   <input type="hidden" name="name" id="feed" value="value" />
-  <button type="submit" class="btn btn-danger">Feed $name</button>
+  <button type="submit" class="btn btn-danger">Feed $tamagotchi.getName()</button>
 </form>
 <form method="post" action="/play">
   <input type="hidden" name="name" id="play" value="value" />
-  <button type="submit" class="btn btn-danger">Play with $name</button>
+  <button type="submit" class="btn btn-danger">Play with $tamagotchi.getName()</button>
 </form>
 <form method="post" action="/rest">
   <input type="hidden" name="name" id="rest" value="value" />
-  <button type="submit" class="btn btn-danger">Let $name rest</button>
+  <button type="submit" class="btn btn-danger">Let $tamagotchi.getName() rest</button>
 </form>
 #end

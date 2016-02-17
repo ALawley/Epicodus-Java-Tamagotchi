@@ -21,13 +21,7 @@ public class App {
       String tamagotchiName = request.queryParams("petName");
       Tamagotchi newTamagotchi = new Tamagotchi(tamagotchiName);
       request.session().attribute("tamagotchi", newTamagotchi);
-      model.put("name", newTamagotchi.getName());
-      model.put("food", newTamagotchi.getFoodLevel());
-      model.put("play", newTamagotchi.getPlayLevel());
-      model.put("rest", newTamagotchi.getRestLevel());
-      model.put("health", newTamagotchi.getHealthLevel());
-      model.put("happiness", newTamagotchi.getHappinessLevel());
-      model.put("age", newTamagotchi.getAge());
+      model.put("tamagotchi", newTamagotchi);
       model.put("template", "templates/tamagotchi.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -38,17 +32,7 @@ public class App {
       tempTamagotchi.feedPet();
       tempTamagotchi.timePasses();
       request.session().attribute("tamagotchi", tempTamagotchi);
-
-      model.put("win", tempTamagotchi.isMature());
-      model.put("die", tempTamagotchi.isDead());
-      model.put("runAway", tempTamagotchi.isRunAway());
-      model.put("name", tempTamagotchi.getName());
-      model.put("food", tempTamagotchi.getFoodLevel());
-      model.put("play", tempTamagotchi.getPlayLevel());
-      model.put("rest", tempTamagotchi.getRestLevel());
-      model.put("health", tempTamagotchi.getHealthLevel());
-      model.put("happiness", tempTamagotchi.getHappinessLevel());
-      model.put("age", tempTamagotchi.getAge());
+      model.put("tamagotchi", tempTamagotchi);
       model.put("template", "templates/game.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -59,17 +43,7 @@ public class App {
       tempTamagotchi.playPet();
       tempTamagotchi.timePasses();
       request.session().attribute("tamagotchi", tempTamagotchi);
-
-      model.put("win", tempTamagotchi.isMature());
-      model.put("die", tempTamagotchi.isDead());
-      model.put("runAway", tempTamagotchi.isRunAway());
-      model.put("name", tempTamagotchi.getName());
-      model.put("food", tempTamagotchi.getFoodLevel());
-      model.put("play", tempTamagotchi.getPlayLevel());
-      model.put("rest", tempTamagotchi.getRestLevel());
-      model.put("health", tempTamagotchi.getHealthLevel());
-      model.put("happiness", tempTamagotchi.getHappinessLevel());
-      model.put("age", tempTamagotchi.getAge());
+      model.put("tamagotchi", tempTamagotchi);
       model.put("template", "templates/game.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -80,17 +54,7 @@ public class App {
       tempTamagotchi.restPet();
       tempTamagotchi.timePasses();
       request.session().attribute("tamagotchi", tempTamagotchi);
-
-      model.put("win", tempTamagotchi.isMature());
-      model.put("die", tempTamagotchi.isDead());
-      model.put("runAway", tempTamagotchi.isRunAway());
-      model.put("name", tempTamagotchi.getName());
-      model.put("food", tempTamagotchi.getFoodLevel());
-      model.put("play", tempTamagotchi.getPlayLevel());
-      model.put("rest", tempTamagotchi.getRestLevel());
-      model.put("health", tempTamagotchi.getHealthLevel());
-      model.put("happiness", tempTamagotchi.getHappinessLevel());
-      model.put("age", tempTamagotchi.getAge());
+      model.put("tamagotchi", tempTamagotchi);
       model.put("template", "templates/game.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
